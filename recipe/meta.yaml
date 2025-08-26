@@ -14,7 +14,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage(name|lower) }}
 
@@ -32,6 +32,8 @@ requirements:
     - {{ stdlib("c") }}            # [unix]
     - {{ compiler("m2w64_c") }}    # [win]
     - {{ stdlib("m2w64_c") }}      # [win]
+    - {{ compiler("c")}}           # [linux]
+    - {{ compiler("cxx")  }}       # [linux]
   host:
     - pthread-stubs
     - xorg-xorgproto
