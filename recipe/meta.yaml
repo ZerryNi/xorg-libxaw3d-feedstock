@@ -17,7 +17,7 @@ build:
   number: 0
   run_exports:
     - {{ pin_subpackage(name|lower) }}
-    
+
 requirements:
   build:
     - m2-autoconf                  # [win]
