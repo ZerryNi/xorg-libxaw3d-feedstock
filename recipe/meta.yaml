@@ -15,7 +15,9 @@ source:
 
 build:
   number: 0
-
+  run_exports:
+    - {{ pin_subpackage(name|lower) }}
+    
 requirements:
   build:
     - m2-autoconf                  # [win]
@@ -30,7 +32,6 @@ requirements:
     - {{ stdlib("c") }}            # [unix]
     - {{ compiler("m2w64_c") }}    # [win]
     - {{ stdlib("m2w64_c") }}      # [win]
-    
   host:
     - pthread-stubs
     - xorg-xorgproto
